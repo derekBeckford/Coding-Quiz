@@ -1,0 +1,30 @@
+body {
+    font-family: verdana, sans-serif;
+}
+
+.timer {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    text-align: right;
+}
+
+.opener {
+    text-align: center;
+}
+
+.start-btn {
+    background-color: #002fa7;
+    display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:24px;
+	padding:10px 20px;
+	text-decoration:none;
+    border-radius: 16px;
+}
+
+.start-btn:hover {
+    background: white;
+    color: #002fa7;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Assets/style.css">
+    <title>Coding Quiz</title>
+</head>
+<body>
+    <section>
+        <p class="highscores" id="highscores">View High Scores</p>
+        <p class="timer" id="timer">Timer: Press Start</p>
+    </section>
+
+    <section class="opener" id="opener">
+        <h1>Coding Quiz</h1>
+        <p>Test your coding knowledge! You will have 60 seconds to answer all X questions. Keep in mind you will be penalized 5 seconds for every wrong answer. Good luck!</p>
+        <button type="button" id="start-btn" class="start-btn">START</button>
+    </section>
+
+    <section class="divcontainer" id="divcontainer">
+        <h3 class="question" id="question"></h3>
+        <button type="button" id="answerbutton" class="answerbutton"></button>
+    </section>
+
+    <div class="checkanswer" id="checkanswer"></div>
+
+    <script src="/Assets/logic.js"></script>
+</body>
+</html>
