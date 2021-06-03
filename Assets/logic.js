@@ -6,16 +6,27 @@ var answerEl = document.querySelector("#answerbutton");
 var divContainerEl = document.querySelector("#divcontainer");
 var startButtonEl = document.querySelector("#start-btn");
 var checkAnswerEl = document.querySelector("#checkanswer");
+var buttonA = document.querySelector("#answerbuttona");
+var buttonB = document.querySelector("#answerbuttonb");
+var buttonC = document.querySelector("#answerbuttonc");
+var buttonD = document.querySelector("#answerbuttond");
+
+var shownQuestionIndex = 0;
+var score = 0;
+var timeLeft = 60;
+var correct;
+
+console.log(buttonA)
+console.log(questionEl)
 
 var questions = [
     { 
         question: 'What does DOM stand for?', 
-        answers: [
-                    'A. Document Object Manipulation', 
-                    'B. Dictation Obstacle Manipulation', 
-                    'C. Document Object Model', 
-                    'D. Document Object Malfunction'
-                ],
+        choiceA: 'A. Document Object Manipulation', 
+        choiceB: 'B. Dictation Obstacle Manipulation', 
+        choiceC: 'C. Document Object Model', 
+        choiceD: 'D. Document Object Malfunction',
+
         correctAnswer: 'C',
     },
     { 
@@ -60,6 +71,14 @@ var questions = [
     }
 ];
 
+var showQuestions = function(){
+    shownQuestion = questions[shownQuestionIndex];
+    questionEl.innerHTML = '<p>' + shownQuestion.question + '</p>';
+    buttonA.innerHTML = shownQuestion.choiceA;
+    buttonB.innerHTML = shownQuestion.choiceB;
+    buttonC.innerHTML = shownQuestion.choiceC;
+    buttonD.innerHTML = shownQuestion.choiceD;
+}
 
 window.onload = function(){
     divContainerEl.style.display = 'none';
@@ -69,6 +88,7 @@ startButtonEl.addEventListener("click", function(){
     openerEl.style.display = 'none';
     divContainerEl.style.display = 'initial';
     startTimer();
+    showQuestions();
 }
 )
 
