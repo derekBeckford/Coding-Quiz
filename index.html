@@ -15,19 +15,20 @@
 
     <section class="opener" id="opener">
         <h1>Coding Quiz</h1>
-        <p>Test your coding knowledge! You will have 60 seconds to answer all X questions. Keep in mind you will be penalized 5 seconds for every wrong answer. Good luck!</p>
+        <p>Test your coding knowledge! You will have 60 seconds to answer all 5 questions. Good luck!</p>
         <button type="button" id="start-btn" class="start-btn">START</button>
     </section>
 
     <section class="divcontainer" id="divcontainer">
         <h3 class="question" id="question"></h3>
-        <button type="button" id="answerbuttona" class="answerbutton"></button>
-        <button type="button" id="answerbuttonb" class="answerbutton"></button>
-        <button type="button" id="answerbuttonc" class="answerbutton"></button>
-        <button type="button" id="answerbuttond" class="answerbutton"></button>
+        <button type="button" id="answerbuttona" class="answerbutton" onclick="checkAnswer(0)"></button>
+        <button type="button" id="answerbuttonb" class="answerbutton" onclick="checkAnswer(1)"></button>
+        <button type="button" id="answerbuttonc" class="answerbutton" onclick="checkAnswer(2)"></button>
+        <button type="button" id="answerbuttond" class="answerbutton" onclick="checkAnswer(3)"></button>
+        <div id="line"></div>
+        <div id="checkanswer" class="checkanswer"></div>
     </section>
 
-    <div class="checkanswer" id="checkanswer"></div>
 
     <script src="/Assets/logic.js"></script>
 </body>

@@ -11,23 +11,20 @@ var buttonB = document.querySelector("#answerbuttonb");
 var buttonC = document.querySelector("#answerbuttonc");
 var buttonD = document.querySelector("#answerbuttond");
 
-var shownQuestionIndex = 0;
 var score = 0;
 var timeLeft = 60;
 var correct;
 
-console.log(buttonA)
-console.log(questionEl)
-
 var questions = [
     { 
         question: 'What does DOM stand for?', 
-        choiceA: 'A. Document Object Manipulation', 
-        choiceB: 'B. Dictation Obstacle Manipulation', 
-        choiceC: 'C. Document Object Model', 
-        choiceD: 'D. Document Object Malfunction',
-
-        correctAnswer: 'C',
+        answers: [
+                    'A. Document Object Manipulation', 
+                    'B. Dictation Obstacle Manipulation', 
+                    'C. Document Object Model', 
+                    'D.Document Object Malfunction'
+        ],
+        correctAnswer: 2,
     },
     { 
         question: 'Which of the following is NOT a Javascript datatype?', 
@@ -37,7 +34,7 @@ var questions = [
                     'C. String', 
                     'D. Function'
                 ],
-        correctAnswer: 'A',
+        correctAnswer: 0,
     },
     {
         question: 'Which is NOT a JavaScript Framework?', 
@@ -47,7 +44,7 @@ var questions = [
                     'C. NodeJS', 
                     'D. JQuery'
                 ],
-        correctAnswer: 'B',
+        correctAnswer: 1,
     },
     { 
         question: 'What does HTML stand for?', 
@@ -57,28 +54,50 @@ var questions = [
                     'C. HyperText Marked Language', 
                     'D. None of the Above '
                 ],
-        correctAnswer: 'A',
+        correctAnswer: 0,
     },
     {
         question: 'Which of the options is the correct "for loop" syntax? ', 
         answers: [
-                    'A. for ([initialExpression]; [conditionalExpression]) {}', 
+                    'A. for ([initialExpression]; [conditionalExpression]) {}',
                     'B. for ([initialExpression]; [incrementExpression]; [conditional Expression}) {}', 
                     'C. for ([conditionalExpression]; [initialExpression]; [incrementExpression}) {}', 
                     'D. for ([initialExpression]; [conditionalExpression]; [incrementExpression}) {}'
-                ],
-        correctAnswer: 'D',
+        ],
+        correctAnswer: 3,
     }
 ];
-
-var showQuestions = function(){
-    shownQuestion = questions[shownQuestionIndex];
-    questionEl.innerHTML = '<p>' + shownQuestion.question + '</p>';
-    buttonA.innerHTML = shownQuestion.choiceA;
-    buttonB.innerHTML = shownQuestion.choiceB;
-    buttonC.innerHTML = shownQuestion.choiceC;
-    buttonD.innerHTML = shownQuestion.choiceD;
+var i = 0;
+var showQuestion = function(i){
+        questionEl.innerHTML = questions[i].question;
+        buttonA.innerHTML = questions[i].answers[0];
+        buttonB.innerHTML = questions[i].answers[1];
+        buttonC.innerHTML = questions[i].answers[2];
+        buttonD.innerHTML = questions[i].answers[3];
 }
+
+
+var checkAnswer = function(choice){
+    if(choice === questions[i].correctAnswer) {
+        score++;
+        checkAnswerEl.innerHTML = 'Correct!';
+    }
+    else {
+        checkanswerEl.innerHTML = 'Wrong!';
+    }
+    document.querySelector("#line").className = "line";
+    document.querySelector("#checkanswer").className = "checkanswer";
+    i++;
+    setTimeout(function() {
+        //remove class
+        document.querySelector("#line").remove("line");
+        document.querySelector("#checkanswer").remove("checkanswer");
+        showQuestion(i);
+    
+    }, 1000);
+}
+
+
 
 window.onload = function(){
     divContainerEl.style.display = 'none';
@@ -88,13 +107,11 @@ startButtonEl.addEventListener("click", function(){
     openerEl.style.display = 'none';
     divContainerEl.style.display = 'initial';
     startTimer();
-    showQuestions();
+    showQuestion(i);
 }
 )
 
 var startTimer = function (){
-    var timeLeft = 60;
-
     setInterval(function(){ 
         if (timeLeft >= 1) {
             timerEl.textContent = 'Timer: ' + timeLeft;
