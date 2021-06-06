@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,9 @@
     <link rel="stylesheet" href="/Assets/style.css">
     <title>Coding Quiz</title>
 </head>
+
 <body>
     <section>
-        <p class="highscores" id="highscores">View High Scores</p>
         <p class="timer" id="timer">Timer: Press Start</p>
     </section>
 
@@ -29,7 +30,22 @@
         <div id="checkanswer" class="checkanswer"></div>
     </section>
 
+    <section class="finalpage" id="finalpage">
+        <h2 class="finale" id="finale"></h2>
+        <p class="scorefinal" id="scorefinal"></p>
+        <label for="initials">Enter your initials:</label>
+        <input type="text" id="initials" name="initials" placeholder="Initials">
+        <input type="submit" value="submit" class="submit" id="submit">
+    </section>
+
+    <section class="highscores" id="highscores">
+        <h1>🌟High Scores🌟</h1>
+        <ol class="highscoreitem" id="highscoreitem"></ol>
+        <button type="button" id="resetbutton" class="resetbutton">Try Again</button>
+    </section>
+
 
     <script src="/Assets/logic.js"></script>
 </body>
+
 </html>

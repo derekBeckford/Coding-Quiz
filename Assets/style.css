@@ -35,7 +35,9 @@ body {
     font-size: 2.2em;
 }
 
-.answerbutton {
+.answerbutton,
+.submit,
+.resetbutton {
     background-color: #002fa7;
     display:block;
 	cursor:pointer;
@@ -50,16 +52,45 @@ body {
 }
 
 .answerbutton:active {
-    background-color: white;
+    opacity: 0.5;
 }
 
-#checkanswer {
+.checkanswer {
     margin-left: 404px;
+    opacity: 0.5;
+    font-size: 1.5em;
 }
 
-#line {
+.line {
     height: 3px;
-    width: 650px;
+    width: 1100px;
     margin: 30px auto 0px auto;
     background-color: gray;
+    opacity: 0.5;
+}
+
+.finalpage {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit {
+    margin: 0;
+    margin-top: 20px;
+}
+
+.submit:active {
+    background-color: green;
+    opacity: 0.5;
+}
+
+.resetbutton {
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 10px;
+}
+
+.highscoreitem {
+    font-family: cursive;
 }
