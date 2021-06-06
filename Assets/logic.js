@@ -192,12 +192,10 @@ var saveHighScore = function () {
     highscoresEl.style.display = 'initial';
     finalpageEl.style.display = 'none';
 
-
     for (var i = 0; i < JSON.parse(localStorage.getItem("highscores")).length; i++) {
         highscoreItemEl.innerHTML += "<li>" + JSON.parse(localStorage.getItem("highscores"))[i].currentPlayer + ': ' + JSON.parse(localStorage.getItem("highscores"))[i].score + "</li>";
     }
 }
-
 
 resetButtonEl.addEventListener("click", function () {
     highscoresEl.style.display = "none";
